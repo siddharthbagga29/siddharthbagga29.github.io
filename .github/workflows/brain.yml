@@ -1,0 +1,33 @@
+# The Brain: runs the self-improving strategy search every 6 hours and commits its state.
+# Free on GitHub Actions for public repositories. The site reads brain/state.json live.
+name: Brain
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: brain
+  cancel-in-progress: false
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Evolve 24 generations
+        run: node brain/evolve.mjs --state brain/state.json --data brain/weekly.json --generations 24
+      - name: Commit the new state
+        run: |
+          git config user.name "brain-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add brain/state.json
+          if git diff --cached --quiet; then echo "No change."; exit 0; fi
+          gen=$(node -e "console.log(JSON.parse(require('fs').readFileSync('brain/state.json','utf8')).generation)")
+          git commit -q -m "Brain: generation $gen"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin main && exit 0; sleep $((i * 5)); done
+          exit 1

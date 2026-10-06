@@ -1,0 +1,1 @@
+[.01,.05,.1,.2,.5].map(e=>({eta:e})),[.5,.8,.9,.95,1].map(e=>({eps:e})),[3,5,10].flatMap(e=>[5,10,20].map(t=>({window:e,eps:t})));function e(e){let t=e>>>0;return()=>{t=t+1831565813>>>0;let e=t;return e=Math.imul(e^e>>>15,e|1),e^=e+Math.imul(e^e>>>7,e|61),((e^e>>>14)>>>0)/4294967296}}export{e as t};
