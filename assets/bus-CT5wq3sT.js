@@ -1,1 +1,0 @@
-import{Et as e,b as t,v as n,wt as r,y as i}from"./styles-CgzG6125.js";var a=e(r(),1);function o(){!i.current&&n();let[e]=(0,a.useState)(t.current);return e}var s=new Set,c={emit(e){for(let t of s)t(e)},on(e){return s.add(e),()=>void s.delete(e)}};export{o as n,c as t};
