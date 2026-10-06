@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Twin-Engine · Concept dashboard</title>
+<meta name="description" content="Concept control room for a two-market real-estate platform (US BRRRR + India flips), with every figure computed from the property records. Illustrative sample data.">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0b0c0f; --base:236 238 241;
+  --ink-1:rgb(var(--base)/.90); --ink-2:rgb(var(--base)/.50);
+  --ink-3:rgb(var(--base)/.30); --ink-4:rgb(var(--base)/.16); --hair:rgb(var(--base)/.07);
+  --fs-micro:.6875rem; --fs-sub:.8125rem; --fs-body:.9375rem;
+  --fs-num-s:1.625rem; --fs-num:2.75rem; --fs-hero:clamp(4rem,9vw,7rem);
+  --w-thin:200; --w-book:400; --w-med:500; --track-label:.2em; --step:clamp(3.5rem,7vw,6rem);
+}
+*{margin:0;box-sizing:border-box}
+html,body{background:var(--bg)}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink-1);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.u-num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.u-root{position:relative;min-height:100vh;background:radial-gradient(130% 90% at 50% -25%,rgb(var(--base)/.05),transparent 55%),var(--bg)}
+.u-root::after{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:170px 170px}
+.u-page{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:clamp(3rem,6vw,5.5rem) clamp(1.5rem,5vw,4rem) 5rem}
+.u-label{font-size:var(--fs-micro);font-weight:var(--w-med);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--ink-3)}
+.u-sub{font-size:var(--fs-sub);font-weight:var(--w-book);color:var(--ink-2);line-height:1.6}
+.u-metric{font-size:var(--fs-num);font-weight:var(--w-thin);color:var(--ink-1);line-height:1}
+.u-metric-s{font-size:var(--fs-num-s);font-weight:var(--w-thin);color:var(--ink-1);line-height:1}
+.u-hero{font-size:var(--fs-hero);font-weight:var(--w-thin);color:var(--ink-1);line-height:.9}
+.u-hero-unit{font-size:.24em;font-weight:var(--w-book);color:var(--ink-3);letter-spacing:0;margin-left:.4em}
+.u-mast{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem}
+.u-wordmark{font-size:clamp(1.05rem,2vw,1.3rem);font-weight:var(--w-med);letter-spacing:.16em;color:var(--ink-1)}
+.u-right{text-align:right}
+.u-rule{height:1px;background:var(--hair);margin-top:1.75rem}
+.u-band{display:grid;margin-top:var(--step)}
+.u-band-4{grid-template-columns:repeat(4,1fr);column-gap:3rem;row-gap:var(--step)}
+.u-band-2{grid-template-columns:1fr 1fr;column-gap:clamp(3rem,7vw,7rem)}
+.u-tile{transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.u-tile:hover{transform:translateY(-1px)}
+.u-tile:hover .u-label{color:rgb(var(--base)/.42)}
+.u-tile>.u-label+.u-metric,.u-tile>.u-label+.u-metric-s{margin-top:1.1rem}
+.u-tile .u-sub{margin-top:.5rem}
+.u-sparkwrap{margin-top:1.5rem;color:var(--ink-4)}
+.u-spark{display:block;width:100%;height:24px}
+.u-pipe{position:relative;display:grid;margin-top:3rem;padding-top:1.5rem}
+.u-pipe-line{position:absolute;top:0;left:0;right:0;height:1px;background:var(--hair)}
+.u-pipe-node{position:relative;display:flex;flex-direction:column;gap:.7rem}
+.u-pipe-node::before{content:'';position:absolute;top:-1.5rem;left:0;width:1px;height:6px;background:var(--ink-4)}
+.u-pipe-node[data-on]::before{height:10px;background:rgb(var(--base)/.55)}
+.u-count{font-size:var(--fs-num-s);font-weight:var(--w-thin);color:var(--ink-1)}
+.u-pipe-node:not([data-on]) .u-count{color:var(--ink-3)}
+.u-stage{font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.u-feature-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:clamp(3rem,6vw,6rem);margin-top:2.25rem;align-items:start}
+.u-meter{position:relative;height:1px;background:var(--hair);margin-top:2.25rem}
+.u-meter>span{position:absolute;left:0;top:0;height:1px;background:rgb(var(--base)/.82)}
+.u-meter::after{content:'';position:absolute;top:-3px;right:0;width:1px;height:7px;background:var(--ink-4)}
+.u-checks{list-style:none;display:flex;flex-direction:column;gap:1.15rem}
+.u-checks li{display:flex;align-items:baseline;justify-content:space-between;gap:2rem}
+.u-check-label{font-size:var(--fs-body);font-weight:var(--w-book)}
+.u-check-state{font-size:var(--fs-micro);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.u-checks li.is-clear{color:var(--ink-3)}
+.u-checks li.is-clear .u-check-state{color:var(--ink-4)}
+.u-checks li.is-attention{color:var(--ink-1)}
+.u-checks li.is-attention .u-check-label{font-weight:var(--w-med)}
+.u-checks li.is-attention .u-check-state{color:var(--ink-2)}
+.u-foot{display:flex;justify-content:space-between;gap:2rem;margin-top:var(--step);font-size:var(--fs-micro);letter-spacing:.06em;color:var(--ink-3)}
+@media(max-width:820px){.u-band-4{grid-template-columns:1fr 1fr;column-gap:2.5rem}.u-band-2{grid-template-columns:1fr;row-gap:var(--step)}.u-feature-grid{grid-template-columns:1fr;row-gap:2.5rem}}
+@media(max-width:500px){.u-band-4{grid-template-columns:1fr}.u-mast{flex-direction:column;gap:1.5rem}.u-right{text-align:left}.u-foot{flex-direction:column;gap:.5rem}}
+.u-banner{display:inline-block;margin-bottom:2rem;padding:.35rem .7rem;border:1px solid var(--hair);border-radius:999px;font-size:var(--fs-micro);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<!-- GENERATED by scripts/render-preview.ts from lib/data.ts — do not edit by hand -->
+<div class="u-root"><div class="u-page">
+  <a href="/" style="color:inherit;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;opacity:.6">← Siddharth Bagga</a>
+  <br><br><div class="u-banner">Concept build · illustrative sample data, not real holdings</div>
+  <header class="u-mast">
+    <div><div class="u-wordmark">TWIN—ENGINE</div><div class="u-sub" style="margin-top:.4rem">Family-Office Control Room</div></div>
+    <div class="u-right"><div class="u-label">Platform Equity</div><div class="u-metric u-num" style="margin-top:.5rem">$4.2M</div></div>
+  </header>
+  <div class="u-rule"></div>
+
+  <section class="u-band u-band-4">
+    <div class="u-tile"><div class="u-label">Gross value-add</div><div class="u-metric u-num">56%</div><div class="u-sub">ARV ÷ basis − 1, before costs</div></div>
+    <div class="u-tile"><div class="u-label">Exits · gross multiple</div><div class="u-metric u-num">1.56×</div><div class="u-sub">2 sold · ARV ÷ basis</div></div>
+    <div class="u-tile"><div class="u-label">Active assets</div><div class="u-metric u-num">6</div><div class="u-sub">38% in renovation</div></div>
+    <div class="u-tile"><div class="u-label">Net IRR</div><div class="u-metric u-num">—</div><div class="u-sub">needs dated cash flows</div></div>
+  </section>
+
+  <section class="u-band u-band-2">
+    <div class="u-tile">
+      <div class="u-mast"><div><div class="u-label">US · Rent Machine</div><div class="u-sub">Buy / Fix / Rent / Refinance / Exit</div></div><div class="u-right"><div class="u-metric-s u-num">$3.8M</div></div></div>
+      <div class="u-pipe" style="grid-template-columns:repeat(5,1fr)"><span class="u-pipe-line"></span>
+        <div class="u-pipe-node" data-on><span class="u-count u-num">01</span><span class="u-stage">Buy</span></div>
+        <div class="u-pipe-node" data-on><span class="u-count u-num">01</span><span class="u-stage">Fix</span></div>
+        <div class="u-pipe-node"><span class="u-count u-num">00</span><span class="u-stage">Rent</span></div>
+        <div class="u-pipe-node" data-on><span class="u-count u-num">01</span><span class="u-stage">Refinance</span></div>
+        <div class="u-pipe-node" data-on><span class="u-count u-num">01</span><span class="u-stage">Exit</span></div>
+      </div>
+      <div class="u-sub" style="margin-top:1.75rem">3 active · leveraged, held</div>
+    </div>
+    <div class="u-tile">
+      <div class="u-mast"><div><div class="u-label">India · Flip Machine</div><div class="u-sub">Acquisition / Paperwork / Resale</div></div><div class="u-right"><div class="u-metric-s u-num">$438K</div></div></div>
+      <div class="u-pipe" style="grid-template-columns:repeat(3,1fr)"><span class="u-pipe-line"></span>
+        <div class="u-pipe-node" data-on><span class="u-count u-num">01</span><span class="u-stage">Acquisition</span></div>
+        <div class="u-pipe-node" data-on><span class="u-count u-num">02</span><span class="u-stage">Paperwork</span></div>
+        <div class="u-pipe-node" data-on><span class="u-count u-num">01</span><span class="u-stage">Resale</span></div>
+      </div>
+      <div class="u-sub" style="margin-top:1.75rem">3 active · unleveraged, rotated</div>
+    </div>
+  </section>
+
+  <section class="u-band" style="display:block">
+    <div class="u-tile">
+      <div class="u-label">Compliance · exit-critical</div>
+      <div class="u-feature-grid">
+        <div>
+          <div class="u-hero u-num">83<span class="u-hero-unit">/ 100</span></div>
+          <div class="u-meter"><span style="width:83%"></span></div>
+          <div class="u-sub" style="margin-top:1.25rem;max-width:32ch">Clean Books Index — the first thing a Tier-1 acquirer diligences. Weight marks what needs attention; nothing here is decorative.</div>
+        </div>
+        <ul class="u-checks">
+          <li class="is-attention"><span class="u-check-label">Title &amp; document files complete</span><span class="u-check-state">2 IN files pending mutation</span></li>
+          <li class="is-clear"><span class="u-check-label">Audited financials current</span><span class="u-check-state">clear</span></li>
+          <li class="is-clear"><span class="u-check-label">All renovation work permitted</span><span class="u-check-state">clear</span></li>
+          <li class="is-clear"><span class="u-check-label">Related-party fees at arm’s length</span><span class="u-check-state">clear</span></li>
+          <li class="is-clear"><span class="u-check-label">US / IN capital pools separated (FEMA)</span><span class="u-check-state">clear</span></li>
+          <li class="is-clear"><span class="u-check-label">Dual-currency ledger reconciled</span><span class="u-check-state">clear</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="u-foot"><span>Clean books · 5 of 6 checks clear</span><span>USD normalized · every figure computed from the records</span></footer>
+</div></div>
+</body>
+</html>
