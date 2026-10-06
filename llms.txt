@@ -14,10 +14,15 @@
 
 ## Research
 - Strategy Lab: interactive backtests of six allocation and risk rules on weekly ETF data, 2015–2026. Hypothetical research, not investment advice.
+- Online portfolio selection study: PAMR and OLMAR look strong without costs but their edge disappears at about 5 bps per side; Monte Carlo (1,000 block-bootstrap paths) shows defensive rules mainly reduce drawdowns rather than beat SPY's return.
+- Deal Lab: wholesale real-estate underwriting with buyer costs, rehab contingency and a Monte Carlo of ARV and rehab risk; Excel model downloadable.
+- Twin-Engine: concept dashboard for a US BRRRR + India flip platform, on illustrative sample data.
 - High Properties: full-stack lead-generation platform (public code on GitHub).
 
 ## Links
 - [Strategy Lab](https://siddharthbagga29.github.io/lab/)
+- [Deal Lab](https://siddharthbagga29.github.io/deal/)
+- [Twin-Engine concept](https://siddharthbagga29.github.io/projects/twin-engine/)
 - [Portfolio](https://siddharthbagga29.github.io/)
 - [Résumé PDF](https://siddharthbagga29.github.io/Siddharth_Bagga_Resume.pdf)
 - [LinkedIn](https://www.linkedin.com/in/siddharth-bagga-sid29)
