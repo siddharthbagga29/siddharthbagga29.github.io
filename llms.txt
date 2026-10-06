@@ -1,6 +1,6 @@
 # Siddharth Bagga
 
-> Valuation and commercial due diligence analyst. M.S. Financial Mathematics, University of Cincinnati. Based in Cincinnati, relocating to New York. Open to commercial due diligence, valuation, corporate strategy and investment analysis roles.
+> Diligence and valuation analyst for private capital, seeking a seat with a family office, private wealth team or lower-middle-market private equity firm. M.S. Financial Mathematics, University of Cincinnati. Based in Cincinnati, relocating to New York. Open to commercial due diligence, valuation, corporate strategy and investment analysis roles.
 
 ## Experience
 - Strategic Finance Lead, Turnkey Services Pro (Jan–Jun 2026): underwrote a $6M+ multi-state acquisition pipeline (normalized EBITDA, IRR/MOIC, purchase-price sensitivity); wrote go/no-go investment memos; opex down 6%.
@@ -12,7 +12,12 @@
 - B.Com (Honors) Finance — University of Delhi
 - Bloomberg Market Concepts. CFA Level I: exam-fee scholarship awarded 2025; exam not yet taken.
 
+## Research
+- Strategy Lab: interactive backtests of six allocation and risk rules on weekly ETF data, 2015–2026. Hypothetical research, not investment advice.
+- High Properties: full-stack lead-generation platform (public code on GitHub).
+
 ## Links
+- [Strategy Lab](https://siddharthbagga29.github.io/lab/)
 - [Portfolio](https://siddharthbagga29.github.io/)
 - [Résumé PDF](https://siddharthbagga29.github.io/Siddharth_Bagga_Resume.pdf)
 - [LinkedIn](https://www.linkedin.com/in/siddharth-bagga-sid29)
