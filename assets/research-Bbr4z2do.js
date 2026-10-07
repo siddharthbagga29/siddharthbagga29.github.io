@@ -1,4 +1,4 @@
-import{Ct as e,Dt as t,St as n,Tt as r,m as i,n as a,p as o,t as s}from"./styles-DzklKlZM.js";import{t as c}from"./AnimatePresence-CNNof8-_.js";/* empty css            */import"./ops-BL6tucP7.js";import{i as l,r as u,t as d}from"./City-BRhgHTCW.js";var f=t(r(),1),p=e(),m=Object.assign({"../../vault/00_CORE_THESES/Costs kill mean reversion.md":`---
+import{Ct as e,Dt as t,St as n,Tt as r,m as i,n as a,p as o,t as s}from"./styles-ucbcY9rJ.js";import{t as c}from"./AnimatePresence-BEgsq-OQ.js";/* empty css            */import"./ops-BL6tucP7.js";import{i as l,r as u,t as d}from"./City-Cbn4RY9E.js";var f=t(r(),1),p=e(),m=Object.assign({"../../vault/00_CORE_THESES/Costs kill mean reversion.md":`---
 tags: [quant, backtest, thesis]
 ---
 # Costs kill mean reversion
