@@ -1,1 +1,0 @@
-import{Dt as e,Tt as t,b as n,v as r,y as i}from"./styles-DfKLvva-.js";var a=e(t(),1);function o(){!i.current&&r();let[e]=(0,a.useState)(n.current);return e}var s=new Set,c={emit(e){for(let t of s)t(e)},on(e){return s.add(e),()=>void s.delete(e)}};export{o as n,c as t};
