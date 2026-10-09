@@ -1,0 +1,602 @@
+{
+ "version": 1,
+ "site": "https://siddharthbagga29.github.io/",
+ "builtAt": "2026-10-09T00:14:11.798Z",
+ "entries": [
+  {
+   "id": "page.home",
+   "kind": "page",
+   "title": "Portfolio home",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "Siddharth Bagga's portfolio: hero, numbers, track record, terminal, live DCF model, deal room, exhibits, research city, Jarvis and contact."
+  },
+  {
+   "id": "page.lab",
+   "kind": "page",
+   "title": "Strategy Lab (/lab/)",
+   "url": "https://siddharthbagga29.github.io/lab/",
+   "text": "Research sandbox on weekly ETF data 2015–2026: allocation rules, online portfolio selection replication, cost sweep, Monte Carlo."
+  },
+  {
+   "id": "page.deal",
+   "kind": "page",
+   "title": "Deal Lab (/deal/)",
+   "url": "https://siddharthbagga29.github.io/deal/",
+   "text": "Wholesale real-estate deal analyzer v2 with live Monte Carlo; the example deal is a NO-GO."
+  },
+  {
+   "id": "page.research",
+   "kind": "page",
+   "title": "Research HQ (/research/)",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "The research city, the Brain's live log, the knowledge graph and the research vault."
+  },
+  {
+   "id": "page.twin",
+   "kind": "page",
+   "title": "Twin-Engine concept (/projects/twin-engine/)",
+   "url": "https://siddharthbagga29.github.io/projects/twin-engine/",
+   "text": "Family-office control room for US BRRRR and India flips, on illustrative sample data."
+  },
+  {
+   "id": "station.hero",
+   "kind": "station",
+   "title": "Home · Spawn point",
+   "url": "https://siddharthbagga29.github.io/#hero",
+   "text": "The Spawn point section of the home page (building the model)."
+  },
+  {
+   "id": "station.numbers",
+   "kind": "station",
+   "title": "Home · The numbers",
+   "url": "https://siddharthbagga29.github.io/#numbers",
+   "text": "The The numbers section of the home page (running sensitivities)."
+  },
+  {
+   "id": "station.experience",
+   "kind": "station",
+   "title": "Home · Track record",
+   "url": "https://siddharthbagga29.github.io/#experience",
+   "text": "The Track record section of the home page (updating the CV)."
+  },
+  {
+   "id": "station.terminal",
+   "kind": "station",
+   "title": "Home · Terminal",
+   "url": "https://siddharthbagga29.github.io/#terminal",
+   "text": "The Terminal section of the home page (pulling the tape)."
+  },
+  {
+   "id": "station.model",
+   "kind": "station",
+   "title": "Home · The model",
+   "url": "https://siddharthbagga29.github.io/#model",
+   "text": "The The model section of the home page (solving the DCF)."
+  },
+  {
+   "id": "station.dealroom",
+   "kind": "station",
+   "title": "Home · Deal room",
+   "url": "https://siddharthbagga29.github.io/#dealroom",
+   "text": "The Deal room section of the home page (reading the dossier)."
+  },
+  {
+   "id": "station.exhibits",
+   "kind": "station",
+   "title": "Home · Exhibits",
+   "url": "https://siddharthbagga29.github.io/#exhibits",
+   "text": "The Exhibits section of the home page (filing the exhibits)."
+  },
+  {
+   "id": "station.research",
+   "kind": "station",
+   "title": "Home · Research",
+   "url": "https://siddharthbagga29.github.io/#research",
+   "text": "The Research section of the home page (publishing research)."
+  },
+  {
+   "id": "station.jarvis",
+   "kind": "station",
+   "title": "Home · Jarvis",
+   "url": "https://siddharthbagga29.github.io/#jarvis",
+   "text": "The Jarvis section of the home page (briefing Jarvis)."
+  },
+  {
+   "id": "station.contact",
+   "kind": "station",
+   "title": "Home · Contact",
+   "url": "https://siddharthbagga29.github.io/#contact",
+   "text": "The Contact section of the home page (earned it)."
+  },
+  {
+   "id": "project.strategy-lab",
+   "kind": "project",
+   "title": "Strategy Lab (Quant Quarter)",
+   "url": "https://siddharthbagga29.github.io/lab/",
+   "text": "Ten allocation and online-portfolio-selection rules on ten years of weekly ETF data. Replicates the academic claim that mean-reversion algorithms win, then shows the edge disappears at about 5 bps of trading cost. Progress 75%. Built: Weekly data pipeline; Six allocation rules + stress windows; OPS replication (UCRP, EG, PAMR, OLMAR); Transaction-cost sweep; Block-bootstrap Monte Carlo; Self-evolving search with locked holdout. Still to build: Automated data refresh; Paper-trading ledger. Universe: 8 ETFs · SPY QQQ IWM EFA AGG TLT GLD VNQ; Data: 561 weeks · 2015-12-28 → 2026-09-21; Split: selection to 2021-05-10 · holdout after; Costs: 10 bps per side (swept 0–50); Monte Carlo: 1,000 × 10-yr block-bootstrap paths. Links: Open the Lab: https://siddharthbagga29.github.io/lab/; Monte Carlo: https://siddharthbagga29.github.io/lab/#montecarlo."
+  },
+  {
+   "id": "bot.strategy-lab.evolver",
+   "kind": "bot",
+   "title": "Evolver · Strategy Lab",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Mutates rule families, scores them on the selection window, promotes champions by fold-by-fold Elo. Runs: Every 6 h · GitHub Actions. Latest result: See the Brain log for the live generation."
+  },
+  {
+   "id": "bot.strategy-lab.auditor",
+   "kind": "bot",
+   "title": "Auditor · Strategy Lab",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Proves no look-ahead, costs reduce returns, weights stay on the simplex, the holdout is never seen. Runs: Every deploy · release gate. Latest result: All lab checks pass on every release."
+  },
+  {
+   "id": "bot.strategy-lab.backtester",
+   "kind": "bot",
+   "title": "Backtester · Strategy Lab",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Walk-forward OPS study with frozen parameters and a cost sweep. Runs: On demand · reproducible script. Latest result: PAMR 10.5% at 0 bps → 0.8% out of sample at 10 bps."
+  },
+  {
+   "id": "bot.strategy-lab.simulator",
+   "kind": "bot",
+   "title": "Simulator · Strategy Lab",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Stationary block bootstrap (mean block 8 weeks), seed 20261006. Runs: On demand · reproducible script. Latest result: Defensive rules: shallower drawdown than SPY in 90–99.8% of paths."
+  },
+  {
+   "id": "project.deal-lab",
+   "kind": "project",
+   "title": "Deal Lab (Underwriting Row)",
+   "url": "https://siddharthbagga29.github.io/deal/",
+   "text": "My Ohio wholesale deal analyzer, audited and rebuilt. v1 ignored the end buyer's costs and never applied its own contingency, so its example deal said GO. Fixed, it is a NO-GO that works in about 29% of simulated outcomes. Progress 71%. Built: Audit of v1 workbook; v2 workbook with live Monte Carlo; Web model mirrors the workbook; Excel vs Python cross-check; Max-price solver. Still to build: Comparable-sales feed; Deal pipeline log. Example deal: ARV $160k · rehab $40k · contract $60k; Rule: 70% of ARV − rehab × 1.15 − fee; Buyer costs: 10% of ARV · min margin 20%; Simulation: 5,000 trials · ARV σ 8% · overrun 10% ± 15%. Links: Open the Deal Lab: https://siddharthbagga29.github.io/deal/; Excel model: https://siddharthbagga29.github.io/Wholesale_Deal_Analyzer_v2.xlsx."
+  },
+  {
+   "id": "bot.deal-lab.underwriter",
+   "kind": "bot",
+   "title": "Underwriter · Deal Lab",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "MAO, buyer all-in cost, margin and the GO / NO-GO signal. Runs: On demand · reproducible script. Latest result: MAO $56,000 · buyer margin 17.5% · NO-GO."
+  },
+  {
+   "id": "bot.deal-lab.simulator",
+   "kind": "bot",
+   "title": "Simulator · Deal Lab",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Draws ARV and rehab-overrun scenarios and counts deals that still work. Runs: On demand · reproducible script. Latest result: Works in 29% of 5,000 outcomes."
+  },
+  {
+   "id": "bot.deal-lab.auditor",
+   "kind": "bot",
+   "title": "Auditor · Deal Lab",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Ties the web model to the workbook's own formulas on every release. Runs: Every deploy · release gate. Latest result: MAO, margin, expected profit and signal all tie."
+  },
+  {
+   "id": "project.jarvis",
+   "kind": "project",
+   "title": "Jarvis (Agent Works)",
+   "url": "https://siddharthbagga29.github.io/#jarvis",
+   "text": "A personal AI assistant in two parts: a Python service with guardrails, rate limits and confirmation-gated actions on a local model, and the in-browser agent on this site with voice, retrieval and citations. Progress 86%. Built: In-browser agent with citations; Voice in and out; Python service + guardrails; Recruiter eval suite; Gated prompt evolution; Local model on the owner's machine. Still to build: Always-on public endpoint. Browser: Web Speech · retrieval over one brief; Service: FastAPI · local LLM via Ollama; Safety: Prompt canary · confirmation-gated actions; Cost: $0. Links: Talk to Jarvis: https://siddharthbagga29.github.io/#jarvis."
+  },
+  {
+   "id": "bot.jarvis.test-runner",
+   "kind": "bot",
+   "title": "Test runner · Jarvis",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "ruff, mypy, 79 pytest cases and the eval harness on every push. Runs: Every push · GitHub Actions. Latest result: 79 tests passing."
+  },
+  {
+   "id": "bot.jarvis.evaluator",
+   "kind": "bot",
+   "title": "Evaluator · Jarvis",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "21 recruiter and principal questions; a release stops if one fails. Runs: Every deploy · release gate. Latest result: 21 / 21 cases pass."
+  },
+  {
+   "id": "bot.jarvis.prompt-evolver",
+   "kind": "bot",
+   "title": "Prompt evolver · Jarvis",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Proposes prompt addenda; keeps one only if strictly better with no regressions. Runs: Owner's machine. Latest result: Runs when the owner's machine is on."
+  },
+  {
+   "id": "project.sentinel",
+   "kind": "project",
+   "title": "Sentinel (Risk Heights)",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Market and actuarial research on what AI failures have cost: 29 public loss claims graded A–D by source quality, a 60,000-trial viability simulation and a 400,000-simulation pricing model. Progress 83%. Built: Loss-claim dataset; Source grading; Viability simulation; Pricing model; Build assertions. Still to build: Public write-up. Evidence: 29 loss claims · graded A–D; Viability: 60,000-trial Monte Carlo; Pricing: 400,000 simulations; Build: 332 assertions · seeded, reproducible. Links: none public."
+  },
+  {
+   "id": "bot.sentinel.grader",
+   "kind": "bot",
+   "title": "Grader · Sentinel",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Grades every claim by source quality before it can feed a number. Runs: On demand · reproducible script. Latest result: 29 claims graded A–D."
+  },
+  {
+   "id": "bot.sentinel.pricer",
+   "kind": "bot",
+   "title": "Pricer · Sentinel",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Frequency-severity simulation for premium ranges. Runs: On demand · reproducible script. Latest result: 400,000 simulations."
+  },
+  {
+   "id": "bot.sentinel.auditor",
+   "kind": "bot",
+   "title": "Auditor · Sentinel",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Fails the build if any figure is typed rather than generated. Runs: On demand · reproducible script. Latest result: 332 assertions pass."
+  },
+  {
+   "id": "project.dcf",
+   "kind": "project",
+   "title": "S&P Global DCF (Valuation Square)",
+   "url": "https://siddharthbagga29.github.io/#model",
+   "text": "M.S. capstone: a multi-scenario DCF of S&P Global benchmarked against Moody's and MSCI, with WACC sensitivity across rate environments. Landed within 10% of analyst consensus. Progress 100%. Built: Model; Peer benchmark; Sensitivity grid; Report; Deck. Still to build: nothing. Peers: Moody's · MSCI; Method: Multi-scenario DCF · WACC × g sensitivity; Result: Within 10% of consensus. Links: Model station: https://siddharthbagga29.github.io/#model."
+  },
+  {
+   "id": "bot.dcf.sensitivity-grid",
+   "kind": "bot",
+   "title": "Sensitivity grid · S&P Global DCF",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Recomputes value across WACC and terminal growth; live in the Model station. Runs: On demand · reproducible script. Latest result: Interactive on the home page."
+  },
+  {
+   "id": "project.twin-engine",
+   "kind": "project",
+   "title": "Twin-Engine (Concept Docks)",
+   "url": "https://siddharthbagga29.github.io/projects/twin-engine/",
+   "text": "A family-office control room for a two-market real-estate platform: US buy-fix-rent-refinance and India flips. Rebuilt so every figure is computed from the records. Runs on illustrative sample data. Progress 50%. Built: Concept dashboard; Metrics computed from records; Generated static preview. Still to build: Real portfolio data; IRR engine; Authentication + backend. Markets: US BRRRR · India flips; Stack: Next.js · TypeScript; Data: Illustrative sample. Links: View the concept: https://siddharthbagga29.github.io/projects/twin-engine/."
+  },
+  {
+   "id": "bot.twin-engine.metrics",
+   "kind": "bot",
+   "title": "Metrics · Twin-Engine",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Equity by market, value-add, exit multiple and compliance from the property list. Runs: On demand · reproducible script. Latest result: Equity $4.2M · exit multiple 1.56×."
+  },
+  {
+   "id": "bot.twin-engine.previewer",
+   "kind": "bot",
+   "title": "Previewer · Twin-Engine",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Regenerates the hosted preview and asserts its numbers. Runs: On demand · reproducible script. Latest result: Preview rebuilt, assertions pass."
+  },
+  {
+   "id": "project.high-properties",
+   "kind": "project",
+   "title": "High Properties (Build Yard)",
+   "url": "https://github.com/siddharthbagga29/High-Properties",
+   "text": "A lead-generation platform for a real-estate business: listings, enquiry capture, WhatsApp follow-up and an admin console on Vercel + Supabase at zero monthly cost. Progress 80%. Built: Listings; Enquiry capture; WhatsApp follow-up; Admin console. Still to build: Independent code audit. Stack: Vercel · Supabase; Cost: $0 / month. Links: Code: https://github.com/siddharthbagga29/High-Properties."
+  },
+  {
+   "id": "bot.high-properties.deployer",
+   "kind": "bot",
+   "title": "Deployer · High Properties",
+   "url": "https://siddharthbagga29.github.io/research/",
+   "text": "Vercel builds the public repository and serves the site. Runs: Every push · GitHub Actions. Latest result: Live on Vercel + Supabase."
+  },
+  {
+   "id": "exhibit.spgi",
+   "kind": "exhibit",
+   "title": "S&P Global — Multi-Scenario DCF",
+   "url": "https://drive.google.com/file/d/16exTikgrGDXtMG6ZUGbIU22tXKgNhoKl/view",
+   "text": "PDF exhibit: S&P Global — Multi-Scenario DCF."
+  },
+  {
+   "id": "exhibit.deck",
+   "kind": "exhibit",
+   "title": "Capstone Presentation",
+   "url": "https://drive.google.com/file/d/1fx3hFvXdGHgK7XMSgFsUEMoOitSsR27y/view",
+   "text": "DECK exhibit: Capstone Presentation."
+  },
+  {
+   "id": "exhibit.risk",
+   "kind": "exhibit",
+   "title": "Risk Tolerance Analysis",
+   "url": "https://drive.google.com/file/d/1qB5As8EMQOw-WS0HCriqin_5XS1jaOq-/view",
+   "text": "PDF exhibit: Risk Tolerance Analysis."
+  },
+  {
+   "id": "exhibit.gc",
+   "kind": "exhibit",
+   "title": "Quantitative Finance Certificate",
+   "url": "https://drive.google.com/file/d/1jN9sdVKpPvv7wb9YeDctIdp1dyjLKhji/view",
+   "text": "PDF exhibit: Quantitative Finance Certificate."
+  },
+  {
+   "id": "exhibit.bmc",
+   "kind": "exhibit",
+   "title": "Bloomberg Market Concepts",
+   "url": "https://drive.google.com/file/d/16QUWgafaycdPYgU6QwjtomN5RdOMq-BG/view",
+   "text": "PDF exhibit: Bloomberg Market Concepts."
+  },
+  {
+   "id": "exhibit.msfin",
+   "kind": "exhibit",
+   "title": "M.S. Financial Mathematics",
+   "url": "https://drive.google.com/file/d/179h1eO2Yu2-5sW_dhz0Q9igq3rhEmI-D/view",
+   "text": "PDF exhibit: M.S. Financial Mathematics."
+  },
+  {
+   "id": "contact",
+   "kind": "contact",
+   "title": "Contact",
+   "url": "https://siddharthbagga29.github.io/#contact",
+   "text": "Email siddharthbagga29@gmail.com. LinkedIn https://www.linkedin.com/in/siddharth-bagga-sid29. Résumé https://siddharthbagga29.github.io/Siddharth_Bagga_Resume.pdf."
+  },
+  {
+   "id": "brief.who",
+   "kind": "brief",
+   "title": "Brief · Who",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- Siddharth Bagga. Valuation and commercial due diligence analyst. - Based in Cincinnati, OH; relocating, New York preferred. - Email: siddharthbagga29@gmail.com. Phone: (860) 595-8333. - LinkedIn: linkedin.com/in/siddharth-bagga-sid29 - Looking for: a seat with a family office, private wealth team or lower-middle-market private equity firm; also commercial due diligence, valuation and investment analysis roles. - He does not offer investment advice or manage anyone's money. Visitors asking him to invest for them, or for personal investment recommendations, should be told that plainly and offered a conversation instead."
+  },
+  {
+   "id": "brief.education",
+   "kind": "brief",
+   "title": "Brief · Education",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- M.S., Financial Mathematics — University of Cincinnati, Jan 2024 to May 2025. - Graduate Certificate, Quantitative Finance — University of Cincinnati, Jan 2025 to May 2025. - B.Com (Honors), Finance — Delhi University, Nov 2020 to May 2023."
+  },
+  {
+   "id": "brief.credentials",
+   "kind": "brief",
+   "title": "Brief · Credentials",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- Bloomberg Market Concepts (Fixed Income, Capital Market Analysis, Interest Rate Risk). - CFA Level I: awarded a merit-based exam-fee scholarship in 2025. He has NOT sat the exam. He is not a CFA charterholder or candidate who has passed Level I. - Scholar, Strategic Management — Indian Institute of Science (IISc), Bangalore."
+  },
+  {
+   "id": "brief.experience-22-months-in-total-14-in-the-",
+   "kind": "brief",
+   "title": "Brief · Experience (22 months in total: 14 in the US, 11 of them full-time, and 8 in India)",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "### Strategic Finance Lead — Turnkey Services Pro, Cincinnati — Jan 2026 to Jun 2026 - Promoted from Financial Associate after five months. - Underwrote a $6M+ multi-state acquisition pipeline in property services. - Market work: addressable market sizing by metro, competitive positioning, peer benchmarking, entry-cost modelling. - Target diligence: normalized EBITDA; tested seller revenue forecasts against backlog and pipeline conversion instead of accepting them; IRR/MOIC at multiple entry and exit points; purchase-price sensitivity; deal structuring. - Wrote the go/no-go investment memoranda that governed every capital deployment decision, presented them to the Managing Partner and defended them under challenge. - Valued private, illiquid companies with DCF (12% WACC, 3% terminal growth) and EBITDA-multiple comparables. Equity assessments ranged from a $3.5M base case to a $21M upside case. - Identified cost and revenue levers that cut operating expenses 6%. - Authored Reg D offering materials for LP capital raises on a deal-by-deal private equity platform. ### Financial Associate — Turnkey Services Pro, Cincinnati — Aug 2025 to Jan 2026 - Joined with no finance function: raw bank statements and scattered invoices. - Built the first working models: DCF, free cash flow, AR/AP, job costing. - Improved executive decision-making efficiency 75% in the first month, per the Managing Partner. - Produced the company's first investment prospectus and capital-raise package. ### Wealth Management Intern — Cerity Partners, Cincinnati — Jan 2025 to Mar 2025 - Reconciled high-volume client transactions and fund movements under U.S. GAAP and internal controls. - Cut daily reporting turnaround 30% by restructuring how portfolio data reached senior advisors. Before the US, in New Delhi, India: ### Financial Services Consultant — ICICI Prudential Life Insurance, Delhi — Jun 2023 to Jan 2024 - Managed 100+ high-value client accounts; reconciling inflows and outflows improved cash-settlement precision 20%. - Ran receivables and payables follow-up that cut outstanding balances 25%. - Variance analysis on client cash flows raised reporting accuracy 15%. - Worked with product and engineering on CRM analytics; client responsiveness improved 22%. - Revenue grew 250% in six months through tighter process controls and client retention. ### Research Intern — Sri Vipra Project, Sri Venkateswara College (University of Delhi) — Jul 2022 to Mar 2023 - Led research on investor risk tolerance in SPSS, maintaining the research datasets for audit-style review. - The work was published as a research report, \"Empirical Analysis of Risk Tolerance\". ### Earlier roles, 2021 to 2022 (while at university) - BFSI research and analysis (banking, financial services and insurance): research decks and organised data files, May 2021 to Jun 2022. - Sales and marketing internships: Shine Projects (course sales, campus webinars) and Younity.in (social media lead generation), 2021; campus ambassador for The Right Guru, 2022."
+  },
+  {
+   "id": "brief.projects",
+   "kind": "brief",
+   "title": "Brief · Projects",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- S&P Global multi-scenario DCF (M.S. capstone): benchmarked against Moody's and MSCI, with WACC sensitivity and free-cash-flow projections across interest-rate environments. Its finding was a valuation within 10% of analyst consensus. - Risk Tolerance Analysis: investor profiling with survey design, a scoring model and portfolio-fit mapping. It grew out of the Sri Vipra research he led in Delhi, published as \"Empirical Analysis of Risk Tolerance\". - Both reports are linked from the Exhibits section of his portfolio."
+  },
+  {
+   "id": "brief.the-interactive-model-on-the-portfolio-s",
+   "kind": "brief",
+   "title": "Brief · The interactive model on the portfolio site",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- The S&P Global DCF on the site is an ILLUSTRATION. It uses SPGI's reported revenue (2023: $12.497B, 2024: $14.208B, 2025: $15.336B) with estimated cash flows. - It defaults to an 8.5% WACC, a reasonable rate for a large, low-leverage data business, and lands near SPGI's market cap (about $113.6B on 2 Oct 2026). That output is a demo calibration. - It is NOT the capstone's result. Never present the site model's ~$111B output as his valuation. - The 12% WACC on his resume belongs to the private-company work at Turnkey, which carried more risk."
+  },
+  {
+   "id": "brief.live-systems-on-the-site",
+   "kind": "brief",
+   "title": "Brief · Live systems on the site",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- Strategy Lab (/lab/): his research sandbox on weekly ETF prices from Dec 2015 to Sep 2026 (SPY, QQQ, IWM, EFA, AGG, TLT, GLD, VNQ). Signals use data up to week t and earn week t+1 (tested for look-ahead); trading costs are modelled; prices exclude dividends. It is hypothetical research, not a live trading system; no capital is managed with it. - Strategy Lab research, online portfolio selection: he implemented algorithms from the Li & Hoi survey (EG, PAMR, OLMAR, uniform CRP) and stress-tested a claim from academic work, including a NYU Stern Glucksman Fellowship study, that mean-reversion algorithms such as PAMR deliver outstanding wealth. Frictionless, it replicates: PAMR compounded 10.5% a year vs 7.6% for equal weight. But PAMR trades about 55.4% of the portfolio every week; its edge is gone by 5 bps of cost and out of sample (May 2021 to Sep 2026, 10 bps) it earned 0.8% a year. Exponentiated Gradient was the most robust: about 0.3% weekly turnover, edge intact at 50 bps. - Strategy Lab Monte Carlo: 1,000 bootstrapped ten-year paths. No strategy reliably beat the S&P 500 on return (at most a few percent of paths). The defensive rules reliably cut drawdowns: 60/40 had a shallower drawdown than the S&P 500 in 99.8% of paths, volatility targeting in 91.5%, inverse volatility in 96.2%. That is the honest result: these rules trade return for smaller drawdowns; they do not have a high probability of outperforming. - Deal Lab (/deal/) and Wholesale Deal Analyzer v2 (Excel): his Ohio wholesale real-estate analyzer, audited and rebuilt. v1 left the end buyer's selling, closing and holding costs out, never applied its own 15% rehab contingency, and used a 15% buyer-margin test while its note said 20%. On v1's own example (ARV $160,000, rehab $40,000, contract $60,000) v1 said GO; v2 says NO-GO: the true maximum allowable offer is $56,000 and the buyer's margin is 17.5%. A 1,000-trial Monte Carlo in the workbook, cross-checked against a 200,000-trial Python simulation, puts the chance the deal closes at a profit near 29%. - Twin-Engine: a concept family-office dashboard for a two-market real-estate platform (US buy-fix-rent-refinance and India flips) with a Clean Books compliance index. The data in it is illustrative sample data, not real holdings. He rebuilt it so every figure is computed from the records. - Sentinel: research on AI-failure losses: 29 public loss claims graded A to D by source quality, a 60,000-trial Monte Carlo of strategy viability and a 400,000-simulation pricing model. Code is private; a walkthrough is available on request. - Research HQ (/research/) and the research city on the home page: each project is drawn as a building whose lit floors are shipped milestones and whose scaffolding is unfinished work; each bot is a real automated job (a scheduled search, a CI test run, a release gate or a reproducible script). It also has a knowledge graph of his research vault: Obsidian notes in four folders (core theses, data pipelines, models and simulations, peer-review logs of mistakes he caught and fixed). - The Brain: a self-improving strategy search that runs every 6 hours on GitHub Actions at no cost. It mutates the Strategy Lab's rule families, backtests children on Jan 2016 to May 2021 data only, scores them out of 100 (risk-adjusted return, fold consistency, drawdown, costs, robustness), and promotes a challenger only if it beats the champion on more folds than it loses (Elo-rated) with a higher score. Scores are discounted with the Deflated Sharpe Ratio (Bailey and Lopez de Prado), which grows stricter with every strategy tried. May 2021 to Sep 2026 is a locked holdout it never sees; a test scrambles those prices and proves its choices do not change. Holdout results are reported for the champion only. Caveats he states himself: choosing the eight ETFs in 2026 is itself hindsight, and the search uses no language model; mutations are parametric, so runs are free and reproducible. The live generation, champion and log are on /research/#brain; it is research, not a trading system. - High Properties: a lead-generation web platform for a real-estate business (Vercel, Supabase, WhatsApp follow-up). The code is public on his GitHub."
+  },
+  {
+   "id": "brief.tools",
+   "kind": "brief",
+   "title": "Brief · Tools",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- Advanced Excel (VBA, PivotTables, XLOOKUP, dynamic models), Bloomberg Terminal, S&P Capital IQ, Thomson Reuters, Python (pandas, NumPy, statsmodels), SQL, R, Power BI, Tableau."
+  },
+  {
+   "id": "brief.outside-work",
+   "kind": "brief",
+   "title": "Brief · Outside work",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- Likes travelling, learning new things and picking up new skills. - Keeps up fitness and takes care of his health. - Enjoys meeting new people."
+  },
+  {
+   "id": "brief.honest-gaps-state-them-plainly-when-aske",
+   "kind": "brief",
+   "title": "Brief · Honest gaps (state them plainly when asked)",
+   "url": "https://siddharthbagga29.github.io/",
+   "text": "- Has not run expert-network or customer-interview programmes. - Has not supervised junior colleagues. - Associate-level candidate, not senior. - Not covered in this brief: middle name, salary expectations, references, personal details beyond the above."
+  },
+  {
+   "id": "note.00_CORE_THESES/Costs kill mean reversion.md",
+   "kind": "note",
+   "title": "Research note · 00_CORE_THESES/Costs kill mean reversion",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Costs kill mean reversion **Claim.** Online portfolio selection's headline winners (PAMR, OLMAR) earn their edge by trading most of the book every week. Once you pay for that trading, the edge is gone. **Evidence.** In [[OPS replication]], PAMR compounds at 10.5% a year with zero costs but turns over about 55% of the portfolio weekly. The [[Cost sweep]] puts its break-even at about 5 bps per side. Out of sample at 10 bps it earns 0.8% a year, against 12.1% for holding SPY. **Status.** Supported. Prior work: [[Li & Hoi survey]], [[Lahanis, Liu & Zhou]]."
+  },
+  {
+   "id": "note.00_CORE_THESES/Defense over offense.md",
+   "kind": "note",
+   "title": "Research note · 00_CORE_THESES/Defense over offense",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Defense over offense **Claim.** Simple defensive rules do not reliably beat an equity index on return. What they reliably do is lose less in bad markets. **Evidence.** Across 1,000 ten-year [[Block bootstrap Monte Carlo]] paths, no rule beats SPY's return reliably, but the 60/40 mix has a shallower worst drawdown than SPY in 99.8% of paths, inverse volatility in 96% and volatility targeting in 92%. See [[Strategy Lab rules]]. **Why it matters.** For a family that thinks in decades, avoiding the drawdown that forces a sale matters more than the last point of return."
+  },
+  {
+   "id": "note.00_CORE_THESES/Evidence over assertion.md",
+   "kind": "note",
+   "title": "Research note · 00_CORE_THESES/Evidence over assertion",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Evidence over assertion **Claim.** A model is only as credible as its least-checked number. Every figure should be generated by code and asserted by a test, never typed. **Where it shows.** [[Sentinel pricing model]] fails its build if a figure is hand-typed (332 assertions). [[Twin-Engine metrics]] replaced a typed IRR with computed figures, see [[Twin-Engine audit]]. The Strategy Lab tests for look-ahead on every release."
+  },
+  {
+   "id": "note.00_CORE_THESES/Search needs a locked holdout.md",
+   "kind": "note",
+   "title": "Research note · 00_CORE_THESES/Search needs a locked holdout",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Search needs a locked holdout **Claim.** An automated search over strategies will always find something that looks good in-sample. The defence is a holdout the search never sees, plus a statistic that charges for every trial. **Implementation.** The [[Brain evolution loop]] selects on 2016–2021 data only; a test scrambles every post-2021 price and proves nothing it chooses changes. Scores are discounted by the [[Deflated Sharpe ratio]], which grows stricter as the trial count grows. **Known weakness.** Choosing the eight ETFs in 2026 is itself hindsight. A champion that beats SPY out of sample is evidence, not proof."
+  },
+  {
+   "id": "note.00_CORE_THESES/Underwrite the buyer.md",
+   "kind": "note",
+   "title": "Research note · 00_CORE_THESES/Underwrite the buyer",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Underwrite the buyer **Claim.** A wholesale assignment only closes if the end buyer still makes money after their own selling, closing and holding costs. A deal that clears the 70% rule can still be a NO-GO. **Evidence.** The example deal in [[Deal Analyzer v2]] clears v1's checks but leaves the buyer a 17.5% margin against a 20% minimum once buyer costs are counted. The [[Deal Monte Carlo]] says it works in about 29% of outcomes. Found in [[Deal Analyzer v1 audit]]."
+  },
+  {
+   "id": "note.01_DATA_PIPELINES/Deal inputs.md",
+   "kind": "note",
+   "title": "Research note · 01_DATA_PIPELINES/Deal inputs",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Deal inputs ARV, rehab, contingency, assignment fee, earnest money, marketing spend, buyer cost rate, minimum buyer margin and close rate. Example values come from the v1 workbook's own example deal so the audit compares like with like. Uncertainty for the [[Deal Monte Carlo]]: ARV σ 8%, rehab overrun 10% ± 15%. These are assumptions, not market estimates; comps should replace them. Used by [[Deal Analyzer v2]]."
+  },
+  {
+   "id": "note.01_DATA_PIPELINES/Sentinel loss claims.md",
+   "kind": "note",
+   "title": "Research note · 01_DATA_PIPELINES/Sentinel loss claims",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Sentinel loss claims 29 public claims of losses caused by AI failures, each graded A–D by source quality before it can feed a number. Low-grade claims are kept for context but excluded from the base case. Feeds [[Sentinel pricing model]]."
+  },
+  {
+   "id": "note.01_DATA_PIPELINES/Weekly ETF bars.md",
+   "kind": "note",
+   "title": "Research note · 01_DATA_PIPELINES/Weekly ETF bars",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Weekly ETF bars - **Assets:** SPY, QQQ, IWM, EFA, AGG, TLT, GLD, VNQ - **Span:** 561 weekly bars, 2015-12-28 → 2026-09-21 - **Source:** Robinhood market data, split-adjusted closes - **Left out:** distributions (dividends and bond coupons). This understates bond-heavy rules most. - **Split:** selection to 2021-05-10, holdout after Feeds [[Strategy Lab rules]], [[OPS replication]], [[Block bootstrap Monte Carlo]] and the [[Brain evolution loop]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Block bootstrap Monte Carlo.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Block bootstrap Monte Carlo",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Block bootstrap Monte Carlo 1,000 ten-year paths built by resampling whole weeks of all eight assets at once, in blocks of geometric length (mean 8 weeks), seed 20261006. Keeps cross-asset correlation and volatility clustering. Method: [[Politis & Romano 1994]]. Reports, per rule: CAGR, drawdown and Sharpe quantiles, and the probability of beating SPY on return, Sharpe and Calmar, or of a shallower drawdown. Result: [[Defense over offense]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Brain evolution loop.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Brain evolution loop",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Brain evolution loop Runs every 6 hours on GitHub Actions at no cost. 1. **Mutate.** Pick a hypothesis family by UCB1 and mutate its best genome (windows, assets, rebalance interval, target volatility, weights). 12% of children are random restarts. 2. **Execute.** Backtest on the selection window only: the code passes a sliced copy of [[Weekly ETF bars]]. 3. **Evaluate.** Rubric out of 100: risk-adjusted return 30, fold consistency 20, drawdown 20, costs 10, robustness 20 ([[Deflated Sharpe ratio]]). 4. **Rate.** Play the challenger against the champion on four folds with Elo updates. Promotion needs more fold wins than losses, a higher score, a drawdown above −35% and cost drag under 1.5% a year. 5. **Remember.** Log why each loser lost; turnover or drawdown failures bias the next mutations (slower rebalancing, more defensive settings). Step sizes follow Rechenberg's 1/5 success rule. Holdout results are reported for the champion only. Thesis: [[Search needs a locked holdout]]. Inspired by autonomous research loops: [[Autonomous research loops]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Cost sweep.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Cost sweep",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Cost sweep Full-sample CAGR of each [[OPS replication]] rule at 0, 5, 10, 25 and 50 bps per side. PAMR and OLMAR break even at about 5 bps; EG survives past 50 bps because it barely trades. Supports [[Costs kill mean reversion]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Deal Analyzer v2.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Deal Analyzer v2",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Deal Analyzer v2 MAO = ARV × 70% − rehab × (1 + contingency) − fee. Buyer all-in = contract + fee + rehab with contingency + buyer costs. Signal requires contract ≤ MAO, buyer margin ≥ minimum and positive expected profit (close-rate weighted). The workbook and the web model tie to the cent; the release checks enforce it. Inputs: [[Deal inputs]]. Risk: [[Deal Monte Carlo]]. History: [[Deal Analyzer v1 audit]]. Thesis: [[Underwrite the buyer]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Deal Monte Carlo.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Deal Monte Carlo",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Deal Monte Carlo 5,000 draws of ARV and rehab overrun; a deal \"works\" if the buyer's margin clears the minimum and it closes. The example deal works in about 29% of outcomes (Excel 29.5%, Python 29.3%). A solver finds the highest contract price that works 60% of the time. Part of [[Deal Analyzer v2]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Deflated Sharpe ratio.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Deflated Sharpe ratio",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Deflated Sharpe ratio The probability that a strategy's true Sharpe ratio beats what the best of N unskilled strategies would show by luck, adjusting for skew, fat tails and sample length. N is every strategy the [[Brain evolution loop]] has ever tried, so the bar rises as the search runs. Source: [[Bailey & López de Prado 2014]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/OPS replication.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/OPS replication",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# OPS replication Uniform constant rebalancing (UCRP), Exponentiated Gradient (EG), PAMR and OLMAR, with the hindsight-optimal BCRP as an oracle. Parameters are chosen on the selection window and frozen for the holdout. | Rule | 0 bps CAGR | Weekly turnover | Holdout CAGR at 10 bps | |---|---|---|---| | PAMR | 10.5% | 55% | 0.8% | | OLMAR | 9.3% | 55% | 0.4% | | EG | — | 0.3% | 6.1% | | SPY | — | — | 12.1% | See [[Cost sweep]]. Tests [[Costs kill mean reversion]]. Prior work: [[Li & Hoi survey]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/S&P Global DCF.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/S&P Global DCF",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# S&P Global DCF M.S. capstone: multi-scenario DCF benchmarked against Moody's and MSCI, with WACC and terminal-growth sensitivity across rate environments. Landed within 10% of analyst consensus. The home page's Model station is a live version of the sensitivity grid. Follows [[Evidence over assertion]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Sentinel pricing model.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Sentinel pricing model",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Sentinel pricing model Frequency-severity simulation for AI-liability cover (400,000 simulations) and a 60,000-trial viability model. Inputs: [[Sentinel loss claims]]. The build fails if any figure is typed rather than generated (332 assertions). Thesis: [[Evidence over assertion]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Strategy Lab rules.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Strategy Lab rules",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Strategy Lab rules Six weekly, long-only rules with no leverage and no look-ahead: buy & hold, strategic mix (60/40), trend filter, dual momentum, inverse volatility and volatility target. A signal formed on week t's close earns week t+1's return; a test tampers with future prices and checks that past weights do not move. Data: [[Weekly ETF bars]]. Stress-tested in [[Block bootstrap Monte Carlo]]. Searched automatically by the [[Brain evolution loop]]."
+  },
+  {
+   "id": "note.02_MODELS_AND_SIMULATIONS/Twin-Engine metrics.md",
+   "kind": "note",
+   "title": "Research note · 02_MODELS_AND_SIMULATIONS/Twin-Engine metrics",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Twin-Engine metrics Equity by market, gross value-add, realised exit multiple, renovation share and compliance, all computed from the property records. IRR is left blank until there are dated cash flows to compute it from. Runs on illustrative sample data. See [[Twin-Engine audit]]."
+  },
+  {
+   "id": "note.03_PEER_REVIEW_LOGS/2026-10 OPS review.md",
+   "kind": "note",
+   "title": "Research note · 03_PEER_REVIEW_LOGS/2026-10 OPS review",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# 2026-10 · OPS review **Attempted.** Replicate the paper's ranking of online portfolio selection rules. **What went wrong.** At zero cost the replication agreed with the paper, and that agreement was the trap: the ranking reverses once trades cost money. **Fix.** Report every rule across a [[Cost sweep]], freeze parameters before the holdout, and lead with the cost-adjusted result. See [[OPS replication]]."
+  },
+  {
+   "id": "note.03_PEER_REVIEW_LOGS/2026-10 Webhook incident.md",
+   "kind": "note",
+   "title": "Research note · 03_PEER_REVIEW_LOGS/2026-10 Webhook incident",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# 2026-10 · Webhook incident **What happened.** The portfolio's Google Sheets webhook wrote a plain number into a People CRM column that an ARRAYFORMULA fills, which blocked the formula and showed #REF!. **Root cause.** The writer only skipped cells that held a formula themselves; cells filled by an array formula look empty. **Fix.** Any column with a formula below its header is now read-only to the webhook, with a test that reproduces the original sheet layout. Same principle as [[Evidence over assertion]]: test against the real layout, not an idealised one."
+  },
+  {
+   "id": "note.03_PEER_REVIEW_LOGS/Deal Analyzer v1 audit.md",
+   "kind": "note",
+   "title": "Research note · 03_PEER_REVIEW_LOGS/Deal Analyzer v1 audit",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Deal Analyzer v1 audit **Bugs found.** 1. Rehab contingency recommended but never applied. 2. End buyer's selling, closing and holding costs missing from their margin. 3. Two minimum margins (15% in the signal, 20% in the guidance). 4. Return on cash ignored marketing spend. 5. Expected profit ignored the close rate. **Effect.** The example deal flipped from GO to NO-GO. **Fixed in** [[Deal Analyzer v2]]."
+  },
+  {
+   "id": "note.03_PEER_REVIEW_LOGS/Twin-Engine audit.md",
+   "kind": "note",
+   "title": "Research note · 03_PEER_REVIEW_LOGS/Twin-Engine audit",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Twin-Engine audit **Found.** A 16.8% IRR typed into the dashboard with nothing behind it; negative currency displayed wrong; no \"rented\" status; sold properties had no stage; sample data unlabelled. **Fixed.** All figures computed in [[Twin-Engine metrics]]; IRR left blank until it can be computed; sample data labelled illustrative."
+  },
+  {
+   "id": "note.04_REFERENCES/Autonomous research loops.md",
+   "kind": "note",
+   "title": "Research note · 04_REFERENCES/Autonomous research loops",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Autonomous research loops The propose → evaluate → keep-or-roll-back pattern of autonomous research agents, such as Andrej Karpathy's autoresearch and open-source self-evolving agent frameworks. The [[Brain evolution loop]] uses the pattern without a language model: mutations are parametric, so every run is free, deterministic and auditable."
+  },
+  {
+   "id": "note.04_REFERENCES/Bailey & López de Prado 2014.md",
+   "kind": "note",
+   "title": "Research note · 04_REFERENCES/Bailey & López de Prado 2014",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Bailey & López de Prado 2014 David H. Bailey and Marcos López de Prado, \"The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality\", *Journal of Portfolio Management* (2014). Used in [[Deflated Sharpe ratio]]."
+  },
+  {
+   "id": "note.04_REFERENCES/Lahanis, Liu & Zhou.md",
+   "kind": "note",
+   "title": "Research note · 04_REFERENCES/Lahanis, Liu & Zhou",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Lahanis, Liu & Zhou A Glucksman Fellowship study at NYU Stern comparing trading strategies including online portfolio selection. Its frictionless ranking is the claim stress-tested in [[Costs kill mean reversion]]. Their work, credited; not mine."
+  },
+  {
+   "id": "note.04_REFERENCES/Li & Hoi survey.md",
+   "kind": "note",
+   "title": "Research note · 04_REFERENCES/Li & Hoi survey",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Li & Hoi survey Bin Li and Steven C. H. Hoi, \"Online Portfolio Selection: A Survey\", *ACM Computing Surveys* (2014). Defines UCRP, EG, PAMR, OLMAR and BCRP as used in [[OPS replication]]."
+  },
+  {
+   "id": "note.04_REFERENCES/Politis & Romano 1994.md",
+   "kind": "note",
+   "title": "Research note · 04_REFERENCES/Politis & Romano 1994",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Politis & Romano 1994 Dimitris N. Politis and Joseph P. Romano, \"The Stationary Bootstrap\", *Journal of the American Statistical Association* (1994). Method behind [[Block bootstrap Monte Carlo]]."
+  },
+  {
+   "id": "note.README.md",
+   "kind": "note",
+   "title": "Research note · README",
+   "url": "https://siddharthbagga29.github.io/research/#graph",
+   "text": "# Research vault Open this folder in [Obsidian](https://obsidian.md) (free) to browse it as a graph. The portfolio builds its knowledge graph from these same files at build time, so a note added here appears on the site after the next deploy. - `00_CORE_THESES/` — the claims I am testing - `01_DATA_PIPELINES/` — where the data comes from and what it leaves out - `02_MODELS_AND_SIMULATIONS/` — backtests, Monte Carlo and valuation models - `03_PEER_REVIEW_LOGS/` — what I got wrong and how it was fixed - `04_REFERENCES/` — papers and prior work Link with `[[Note name]]`. Tag in the front matter. Every number in a note must come from a script or a model in the repository, never typed from memory."
+  }
+ ]
+}
