@@ -1,7 +1,7 @@
 {
  "version": 1,
  "site": "https://siddharthbagga29.github.io/",
- "builtAt": "2026-10-20T23:44:10.185Z",
+ "builtAt": "2026-10-24T23:56:59.246Z",
  "entries": [
   {
    "id": "page.home",
@@ -109,172 +109,179 @@
    "text": "The Contact section of the home page (earned it)."
   },
   {
+   "id": "project.dcf",
+   "kind": "project",
+   "title": "S&P Global multi-scenario DCF (Capital Markets · Research & Quantitative Finance)",
+   "url": "https://siddharthbagga29.github.io/research/dcf/",
+   "text": "M.S. capstone: a multi-scenario DCF of S&P Global benchmarked against Moody's and MSCI, with WACC sensitivity and free-cash-flow projections across interest-rate environments. Its finding was a valuation within 10% of analyst consensus. Progress 40%. Built: Interactive WACC × growth model on the site (deployed); Sensitivity grid computed from one function (implemented). Still to build: nothing. Not verified here: Capstone model and report; Peer benchmark (Moody's, MSCI); Capstone presentation. Data: SPGI reported revenue 2023–2025 (10-K); site model's cash flows and net debt are estimates. Limitations: The capstone workbook is not in this repository; its result is quoted from the report, not recomputed. The interactive model is an illustration on reported revenue with estimated cash flows. It is calibrated near the market cap and is not the capstone's valuation. Links: Model station: https://siddharthbagga29.github.io/#model; Capstone report (PDF): https://drive.google.com/file/d/16exTikgrGDXtMG6ZUGbIU22tXKgNhoKl/view; Capstone deck: https://drive.google.com/file/d/1fx3hFvXdGHgK7XMSgFsUEMoOitSsR27y/view."
+  },
+  {
+   "id": "bot.dcf.sensitivity-grid",
+   "kind": "bot",
+   "title": "Sensitivity grid · S&P Global multi-scenario DCF",
+   "url": "https://siddharthbagga29.github.io/research/dcf/",
+   "text": "Recomputes value across WACC and terminal growth in the browser. Runs: On demand · reproducible script. Latest result: Interactive on the home page. Defined in the repository."
+  },
+  {
+   "id": "project.risk-tolerance",
+   "kind": "project",
+   "title": "Risk Tolerance Analysis (Capital Markets · Research & Quantitative Finance)",
+   "url": "https://siddharthbagga29.github.io/research/risk-tolerance/",
+   "text": "Investor profiling with survey design, a scoring model and portfolio-fit mapping. It grew out of the Sri Vipra research he led in Delhi, published as \"Empirical Analysis of Risk Tolerance\". Progress 0%. Built: . Still to build: Reproducible scoring script. Not verified here: Survey design; Scoring model; Portfolio-fit mapping; Published report. Data: Survey responses analysed in SPSS (Sri Vipra project, 2022–2023). Limitations: The dataset and SPSS files are not in this repository, so nothing here is reproduced; every claim rests on the published report. Sample size, response rate and scoring weights are in the report, not restated here. Links: Report (PDF): https://drive.google.com/file/d/1qB5As8EMQOw-WS0HCriqin_5XS1jaOq-/view."
+  },
+  {
    "id": "project.strategy-lab",
    "kind": "project",
-   "title": "Strategy Lab (Quant Quarter)",
-   "url": "https://siddharthbagga29.github.io/lab/",
-   "text": "Ten allocation and online-portfolio-selection rules on ten years of weekly ETF data. Replicates the academic claim that mean-reversion algorithms win, then shows the edge disappears at about 5 bps of trading cost. Progress 75%. Built: Weekly data pipeline; Six allocation rules + stress windows; OPS replication (UCRP, EG, PAMR, OLMAR); Transaction-cost sweep; Block-bootstrap Monte Carlo; Self-evolving search with locked holdout. Still to build: Automated data refresh; Paper-trading ledger. Universe: 8 ETFs · SPY QQQ IWM EFA AGG TLT GLD VNQ; Data: 561 weeks · 2015-12-28 → 2026-09-21; Split: selection to 2021-05-10 · holdout after; Costs: 10 bps per side (swept 0–50); Monte Carlo: 1,000 × 10-yr block-bootstrap paths. Links: Open the Lab: https://siddharthbagga29.github.io/lab/; Monte Carlo: https://siddharthbagga29.github.io/lab/#montecarlo."
+   "title": "Strategy Lab & the Brain (Capital Markets · Research & Quantitative Finance)",
+   "url": "https://siddharthbagga29.github.io/research/strategy-lab/",
+   "text": "Allocation and online-portfolio-selection rules on weekly ETF data, plus the Brain: a scheduled strategy search that mutates rules, scores them on 2016–2021 only and reports the champion on a 2021–2026 holdout it never selects on. Progress 73%. Built: Weekly data snapshot (implemented); Six allocation rules, no look-ahead (automated test passes); OPS replication (UCRP, EG, PAMR, OLMAR) (result generated); Transaction-cost sweep (result generated); Block-bootstrap Monte Carlo (result generated); Scheduled search with locked holdout (deployed); Holdout-isolation test (automated test passes); Paper-mode execution gate for the champion (automated test passes). Still to build: Total-return data (distributions); Automated data refresh; Forward paper-trading record. Not verified here: nothing. Data: 8 ETFs, 561 weekly bars, split-adjusted closes, distributions excluded. Limitations: Prices exclude distributions, so bond-heavy rules are understated and equity-heavy rules flattered. The data snapshot is not refreshed automatically. Every Brain run re-searches the same history; a successful run does not mean new data. Choosing these eight ETFs in 2026 is itself hindsight, and the holdout has been displayed publicly, so it is not a pristine test. The only untouched test is future data. Hypothetical research: no capital is managed with it and nothing here is a trading signal. A separate execution gate (trading/) is set to paper mode in its config at this commit; the site has no connection to it and can't place orders. Links: Open the Lab: https://siddharthbagga29.github.io/lab/; Monte Carlo: https://siddharthbagga29.github.io/lab/#montecarlo; Brain log: https://siddharthbagga29.github.io/research/#brain."
   },
   {
    "id": "bot.strategy-lab.evolver",
    "kind": "bot",
-   "title": "Evolver · Strategy Lab",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Mutates rule families, scores them on the selection window, promotes champions by fold-by-fold Elo. Runs: Every 6 h · GitHub Actions. Latest result: See the Brain log for the live generation."
+   "title": "Evolver · Strategy Lab & the Brain",
+   "url": "https://siddharthbagga29.github.io/research/strategy-lab/",
+   "text": "Mutates rule families, scores them on the selection window, promotes champions by fold-by-fold Elo. Runs: Every 6 h · GitHub Actions. Latest result: See the run ledger. Defined in the repository."
   },
   {
    "id": "bot.strategy-lab.auditor",
    "kind": "bot",
-   "title": "Auditor · Strategy Lab",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Proves no look-ahead, costs reduce returns, weights stay on the simplex, the holdout is never seen. Runs: Every deploy · release gate. Latest result: All lab checks pass on every release."
+   "title": "Auditor · Strategy Lab & the Brain",
+   "url": "https://siddharthbagga29.github.io/research/strategy-lab/",
+   "text": "Checks no look-ahead, costs reduce returns, weights stay on the simplex and the holdout can't change selection. Runs: Every deploy · release gate. Latest result: lab-check runs before every deploy. Defined in the repository."
   },
   {
    "id": "bot.strategy-lab.backtester",
    "kind": "bot",
-   "title": "Backtester · Strategy Lab",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Walk-forward OPS study with frozen parameters and a cost sweep. Runs: On demand · reproducible script. Latest result: PAMR 10.5% at 0 bps → 0.8% out of sample at 10 bps."
+   "title": "Backtester · Strategy Lab & the Brain",
+   "url": "https://siddharthbagga29.github.io/research/strategy-lab/",
+   "text": "Walk-forward OPS study with frozen parameters and a cost sweep. Runs: On demand · reproducible script. Latest result: PAMR 10.5% a year at 0 bps; 0.8% out of sample at 10 bps. Defined in the repository."
   },
   {
    "id": "bot.strategy-lab.simulator",
    "kind": "bot",
-   "title": "Simulator · Strategy Lab",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Stationary block bootstrap (mean block 8 weeks), seed 20261006. Runs: On demand · reproducible script. Latest result: Defensive rules: shallower drawdown than SPY in 90–99.8% of paths."
+   "title": "Simulator · Strategy Lab & the Brain",
+   "url": "https://siddharthbagga29.github.io/research/strategy-lab/",
+   "text": "Stationary block bootstrap, mean block 8 weeks, seed 20261006. Runs: On demand · reproducible script. Latest result: 60/40 shallower drawdown than SPY in 99.8% of paths. Defined in the repository."
   },
   {
    "id": "project.deal-lab",
    "kind": "project",
-   "title": "Deal Lab (Underwriting Row)",
-   "url": "https://siddharthbagga29.github.io/deal/",
-   "text": "My Ohio wholesale deal analyzer, audited and rebuilt. v1 ignored the end buyer's costs and never applied its own contingency, so its example deal said GO. Fixed, it is a NO-GO that works in about 29% of simulated outcomes. Progress 71%. Built: Audit of v1 workbook; v2 workbook with live Monte Carlo; Web model mirrors the workbook; Excel vs Python cross-check; Max-price solver. Still to build: Comparable-sales feed; Deal pipeline log. Example deal: ARV $160k · rehab $40k · contract $60k; Rule: 70% of ARV − rehab × 1.15 − fee; Buyer costs: 10% of ARV · min margin 20%; Simulation: 5,000 trials · ARV σ 8% · overrun 10% ± 15%. Links: Open the Deal Lab: https://siddharthbagga29.github.io/deal/; Excel model: https://siddharthbagga29.github.io/Wholesale_Deal_Analyzer_v2.xlsx."
+   "title": "Deal Lab (Investment & Underwriting · Investment & Underwriting)",
+   "url": "https://siddharthbagga29.github.io/research/deal-lab/",
+   "text": "His Ohio wholesale deal analyzer, audited and rebuilt. v1 left out the end buyer's costs and never applied its own contingency, so its example deal said GO. Fixed, it is a NO-GO that works in about 29% of simulated outcomes. Progress 71%. Built: Audit of the v1 workbook (implemented); v2 workbook with Monte Carlo (implemented); Web model mirrors the workbook (deployed); Web model ties to the workbook formulas (automated test passes); Max-price solver (implemented). Still to build: Comparable-sales feed; Deal pipeline log. Not verified here: nothing. Data: Illustrative deal inputs from the v2 workbook (ARV $160k, rehab $40k, contract $60k). Limitations: One illustrative deal. Inputs are assumptions, not a live comparable-sales feed. Simulation distributions (ARV σ 8%, rehab overrun 10% ± 15%) are assumptions, not fitted to closed deals. Links: Open the Deal Lab: https://siddharthbagga29.github.io/deal/; Excel model: https://siddharthbagga29.github.io/Wholesale_Deal_Analyzer_v2.xlsx."
   },
   {
    "id": "bot.deal-lab.underwriter",
    "kind": "bot",
    "title": "Underwriter · Deal Lab",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "MAO, buyer all-in cost, margin and the GO / NO-GO signal. Runs: On demand · reproducible script. Latest result: MAO $56,000 · buyer margin 17.5% · NO-GO."
+   "url": "https://siddharthbagga29.github.io/research/deal-lab/",
+   "text": "MAO, buyer all-in cost, margin and the GO / NO-GO signal. Runs: On demand · reproducible script. Latest result: MAO $56,000 · buyer margin 17.5% · NO-GO. Defined in the repository."
   },
   {
    "id": "bot.deal-lab.simulator",
    "kind": "bot",
    "title": "Simulator · Deal Lab",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Draws ARV and rehab-overrun scenarios and counts deals that still work. Runs: On demand · reproducible script. Latest result: Works in 29% of 5,000 outcomes."
+   "url": "https://siddharthbagga29.github.io/research/deal-lab/",
+   "text": "Draws ARV and rehab-overrun scenarios and counts deals that still work. Runs: On demand · reproducible script. Latest result: Works in 29% of 5,000 outcomes. Defined in the repository."
   },
   {
    "id": "bot.deal-lab.auditor",
    "kind": "bot",
    "title": "Auditor · Deal Lab",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Ties the web model to the workbook's own formulas on every release. Runs: Every deploy · release gate. Latest result: MAO, margin, expected profit and signal all tie."
-  },
-  {
-   "id": "project.jarvis",
-   "kind": "project",
-   "title": "Jarvis (Agent Works)",
-   "url": "https://siddharthbagga29.github.io/#jarvis",
-   "text": "A personal AI assistant in two parts: a Python service with guardrails, rate limits and confirmation-gated actions on a local model, and the in-browser agent on this site with voice, retrieval and citations. Progress 86%. Built: In-browser agent with citations; Voice in and out; Python service + guardrails; Recruiter eval suite; Gated prompt evolution; Local model on the owner's machine. Still to build: Always-on public endpoint. Browser: Web Speech · retrieval over one brief; Service: FastAPI · local LLM via Ollama; Safety: Prompt canary · confirmation-gated actions; Cost: $0. Links: Talk to Jarvis: https://siddharthbagga29.github.io/#jarvis."
-  },
-  {
-   "id": "bot.jarvis.test-runner",
-   "kind": "bot",
-   "title": "Test runner · Jarvis",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "ruff, mypy, 79 pytest cases and the eval harness on every push. Runs: Every push · GitHub Actions. Latest result: 79 tests passing."
-  },
-  {
-   "id": "bot.jarvis.evaluator",
-   "kind": "bot",
-   "title": "Evaluator · Jarvis",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "21 recruiter and principal questions; a release stops if one fails. Runs: Every deploy · release gate. Latest result: 21 / 21 cases pass."
-  },
-  {
-   "id": "bot.jarvis.prompt-evolver",
-   "kind": "bot",
-   "title": "Prompt evolver · Jarvis",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Proposes prompt addenda; keeps one only if strictly better with no regressions. Runs: Owner's machine. Latest result: Runs when the owner's machine is on."
-  },
-  {
-   "id": "project.sentinel",
-   "kind": "project",
-   "title": "Sentinel (Risk Heights)",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Market and actuarial research on what AI failures have cost: 29 public loss claims graded A–D by source quality, a 60,000-trial viability simulation and a 400,000-simulation pricing model. Progress 83%. Built: Loss-claim dataset; Source grading; Viability simulation; Pricing model; Build assertions. Still to build: Public write-up. Evidence: 29 loss claims · graded A–D; Viability: 60,000-trial Monte Carlo; Pricing: 400,000 simulations; Build: 332 assertions · seeded, reproducible. Links: none public."
-  },
-  {
-   "id": "bot.sentinel.grader",
-   "kind": "bot",
-   "title": "Grader · Sentinel",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Grades every claim by source quality before it can feed a number. Runs: On demand · reproducible script. Latest result: 29 claims graded A–D."
-  },
-  {
-   "id": "bot.sentinel.pricer",
-   "kind": "bot",
-   "title": "Pricer · Sentinel",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Frequency-severity simulation for premium ranges. Runs: On demand · reproducible script. Latest result: 400,000 simulations."
-  },
-  {
-   "id": "bot.sentinel.auditor",
-   "kind": "bot",
-   "title": "Auditor · Sentinel",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Fails the build if any figure is typed rather than generated. Runs: On demand · reproducible script. Latest result: 332 assertions pass."
-  },
-  {
-   "id": "project.dcf",
-   "kind": "project",
-   "title": "S&P Global DCF (Valuation Square)",
-   "url": "https://siddharthbagga29.github.io/#model",
-   "text": "M.S. capstone: a multi-scenario DCF of S&P Global benchmarked against Moody's and MSCI, with WACC sensitivity across rate environments. Landed within 10% of analyst consensus. Progress 100%. Built: Model; Peer benchmark; Sensitivity grid; Report; Deck. Still to build: nothing. Peers: Moody's · MSCI; Method: Multi-scenario DCF · WACC × g sensitivity; Result: Within 10% of consensus. Links: Model station: https://siddharthbagga29.github.io/#model."
-  },
-  {
-   "id": "bot.dcf.sensitivity-grid",
-   "kind": "bot",
-   "title": "Sensitivity grid · S&P Global DCF",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Recomputes value across WACC and terminal growth; live in the Model station. Runs: On demand · reproducible script. Latest result: Interactive on the home page."
+   "url": "https://siddharthbagga29.github.io/research/deal-lab/",
+   "text": "Ties the web model to the workbook's own formulas before every deploy. Runs: Every deploy · release gate. Latest result: lab-check runs before every deploy. Defined in the repository."
   },
   {
    "id": "project.twin-engine",
    "kind": "project",
-   "title": "Twin-Engine (Concept Docks)",
-   "url": "https://siddharthbagga29.github.io/projects/twin-engine/",
-   "text": "A family-office control room for a two-market real-estate platform: US buy-fix-rent-refinance and India flips. Rebuilt so every figure is computed from the records. Runs on illustrative sample data. Progress 50%. Built: Concept dashboard; Metrics computed from records; Generated static preview. Still to build: Real portfolio data; IRR engine; Authentication + backend. Markets: US BRRRR · India flips; Stack: Next.js · TypeScript; Data: Illustrative sample. Links: View the concept: https://siddharthbagga29.github.io/projects/twin-engine/."
+   "title": "Twin-Engine (Investment & Underwriting · Product Engineering)",
+   "url": "https://siddharthbagga29.github.io/research/twin-engine/",
+   "text": "A concept family-office control room for a two-market real-estate platform: US buy-fix-rent-refinance and India flips. Rebuilt so every figure is computed from the records. Runs on illustrative sample data. Progress 50%. Built: Concept dashboard (implemented); Metrics computed from records (implemented); Static preview, regenerated with checks (deployed). Still to build: Real portfolio data; IRR engine on dated cash flows; Authentication and backend. Not verified here: nothing. Data: Illustrative sample portfolio (not real holdings). Limitations: Sample data only. IRR is deliberately blank until dated cash flows exist to compute it from. No authentication or persistence. Links: View the concept: https://siddharthbagga29.github.io/projects/twin-engine/."
   },
   {
    "id": "bot.twin-engine.metrics",
    "kind": "bot",
    "title": "Metrics · Twin-Engine",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Equity by market, value-add, exit multiple and compliance from the property list. Runs: On demand · reproducible script. Latest result: Equity $4.2M · exit multiple 1.56×."
+   "url": "https://siddharthbagga29.github.io/research/twin-engine/",
+   "text": "Equity by market, value-add, exit multiple and compliance from the property list. Runs: On demand · reproducible script. Latest result: Equity $4.2M · exit multiple 1.56× on sample data. Defined in the repository."
   },
   {
    "id": "bot.twin-engine.previewer",
    "kind": "bot",
    "title": "Previewer · Twin-Engine",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Regenerates the hosted preview and asserts its numbers. Runs: On demand · reproducible script. Latest result: Preview rebuilt, assertions pass."
+   "url": "https://siddharthbagga29.github.io/research/twin-engine/",
+   "text": "Regenerates the hosted preview and asserts its numbers. Runs: On demand · reproducible script. Latest result: Preview rebuilt with assertions. Defined in the repository."
+  },
+  {
+   "id": "project.sentinel",
+   "kind": "project",
+   "title": "Sentinel (Risk & Reliability · Research & Quantitative Finance)",
+   "url": "https://siddharthbagga29.github.io/research/sentinel/",
+   "text": "Research on what AI failures have cost: 29 public loss claims graded A–D by source quality, a 60,000-trial viability simulation and a 400,000-simulation pricing model. Progress 67%. Built: Loss-claim dataset (implemented); Source grading (implemented); Viability simulation (implemented); Pricing model (implemented). Still to build: Public write-up. Not verified here: Build assertions (332 claimed). Data: 29 public loss claims, graded A–D by source quality. Limitations: The assertion harness was not re-run in this audit, so its pass count is a claim, not a verified result. Public loss claims are a biased sample: large, reported failures are over-represented. Links: none public."
+  },
+  {
+   "id": "bot.sentinel.grader",
+   "kind": "bot",
+   "title": "Grader · Sentinel",
+   "url": "https://siddharthbagga29.github.io/research/sentinel/",
+   "text": "Grades every claim by source quality before it can feed a number. Runs: On demand · reproducible script. Latest result: 29 claims graded A–D. Not verified from the repository."
+  },
+  {
+   "id": "bot.sentinel.pricer",
+   "kind": "bot",
+   "title": "Pricer · Sentinel",
+   "url": "https://siddharthbagga29.github.io/research/sentinel/",
+   "text": "Frequency-severity simulation for premium ranges. Runs: On demand · reproducible script. Latest result: 400,000 simulations. Not verified from the repository."
+  },
+  {
+   "id": "bot.sentinel.auditor",
+   "kind": "bot",
+   "title": "Auditor · Sentinel",
+   "url": "https://siddharthbagga29.github.io/research/sentinel/",
+   "text": "Fails the build if any figure is typed rather than generated. Runs: On demand · reproducible script. Latest result: 332 assertions (claimed). Not verified from the repository."
+  },
+  {
+   "id": "project.jarvis",
+   "kind": "project",
+   "title": "Jarvis (Automation & Product Systems · AI & Automation)",
+   "url": "https://siddharthbagga29.github.io/research/jarvis/",
+   "text": "A personal AI assistant in two parts: a Python service with guardrails, rate limits and confirmation-gated actions on a local model, and the in-browser agent on this site with voice, retrieval and citations. Progress 71%. Built: In-browser agent with citations (deployed); Voice in and out (deployed); Python service with guardrails (automated test passes); False-claim guard and action ledger (automated test passes); Recruiter eval gate before deploy (automated test passes). Still to build: Always-on public endpoint. Not verified here: Local model on the owner's machine. Data: One knowledge brief (jarvis/knowledge/brief.md) and an eval set of recruiter questions. Limitations: The Python service runs on the owner's Mac; the public site runs a separate in-browser agent. In CI the eval runs with a fake backend and a minimum pass rate of 0, so CI does not gate on answer quality; the deploy gate does. Links: Talk to Jarvis: https://siddharthbagga29.github.io/#jarvis."
+  },
+  {
+   "id": "bot.jarvis.test-runner",
+   "kind": "bot",
+   "title": "Test runner · Jarvis",
+   "url": "https://siddharthbagga29.github.io/research/jarvis/",
+   "text": "ruff, mypy and pytest on every push that touches jarvis/. Runs: Every push · GitHub Actions. Latest result: See the latest CI run. Defined in the repository."
+  },
+  {
+   "id": "bot.jarvis.evaluator",
+   "kind": "bot",
+   "title": "Evaluator · Jarvis",
+   "url": "https://siddharthbagga29.github.io/research/jarvis/",
+   "text": "Grades the in-browser Jarvis on the recruiter cases; a failure stops the deploy. Runs: Every deploy · release gate. Latest result: Recorded at the last build. Defined in the repository."
+  },
+  {
+   "id": "bot.jarvis.prompt-evolver",
+   "kind": "bot",
+   "title": "Prompt evolver · Jarvis",
+   "url": "https://siddharthbagga29.github.io/research/jarvis/",
+   "text": "Proposes prompt addenda; keeps one only if strictly better with no regressions. Runs: Owner's machine. Latest result: Runs on the owner's machine. Not verified from the repository."
   },
   {
    "id": "project.high-properties",
    "kind": "project",
-   "title": "High Properties (Build Yard)",
-   "url": "https://github.com/siddharthbagga29/High-Properties",
-   "text": "A lead-generation platform for a real-estate business: listings, enquiry capture, WhatsApp follow-up and an admin console on Vercel + Supabase at zero monthly cost. Progress 80%. Built: Listings; Enquiry capture; WhatsApp follow-up; Admin console. Still to build: Independent code audit. Stack: Vercel · Supabase; Cost: $0 / month. Links: Code: https://github.com/siddharthbagga29/High-Properties."
+   "title": "High Properties (Automation & Product Systems · Product Engineering)",
+   "url": "https://siddharthbagga29.github.io/research/high-properties/",
+   "text": "A lead-generation platform for a real-estate business: listings, enquiry capture, WhatsApp follow-up and an admin console on Vercel and Supabase. Progress 67%. Built: Listings (implemented); Enquiry capture (implemented); WhatsApp follow-up (implemented); Admin console with server-side role checks (implemented). Still to build: Independent code audit. Not verified here: Deployed on Vercel. Data: Listings and leads in Supabase (production data not inspected). Limitations: The copy in this repository is a flat upload: handlers import ../lib/*, which isn't here, so it can't be run or tested from this repository. The deployed Vercel functions and Supabase policies were not inspected. Links: Code: https://github.com/siddharthbagga29/High-Properties."
   },
   {
    "id": "bot.high-properties.deployer",
    "kind": "bot",
    "title": "Deployer · High Properties",
-   "url": "https://siddharthbagga29.github.io/research/",
-   "text": "Vercel builds the public repository and serves the site. Runs: Every push · GitHub Actions. Latest result: Live on Vercel + Supabase."
+   "url": "https://siddharthbagga29.github.io/research/high-properties/",
+   "text": "Vercel builds the public repository and serves the site. Runs: Every push · GitHub Actions. Latest result: Not verified from here. Not verified from the repository."
   },
   {
    "id": "exhibit.spgi",

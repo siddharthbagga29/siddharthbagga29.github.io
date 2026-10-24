@@ -1,5 +1,6 @@
-# The Brain: runs the self-improving strategy search every 6 hours and commits its state.
-# Free on GitHub Actions for public repositories. The site reads brain/state.json live.
+# The Brain: re-runs the strategy search every 6 hours and commits its state. It searches a fixed
+# data snapshot (brain/weekly.json); nothing here refreshes market data. A green run means the job
+# worked, not that its champion is validated. Free on GitHub Actions for public repositories.
 name: Brain
 on:
   schedule:
@@ -15,12 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Check out the newest main, not the commit the schedule fired on: a queued duplicate run would
+      # otherwise evolve a stale state and fail on push (run #49, 2026-10-20).
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
+          package-manager-cache: false
       - name: Evolve 24 generations
-        run: node brain/evolve.mjs --state brain/state.json --data brain/weekly.json --generations 24
+        # skips (exit 0, no change) if another run wrote the state in the last 2 hours
+        run: node brain/evolve.mjs --state brain/state.json --data brain/weekly.json --generations 24 --min-gap-hours 2
       - name: Commit the new state
         run: |
           git config user.name "brain-bot"

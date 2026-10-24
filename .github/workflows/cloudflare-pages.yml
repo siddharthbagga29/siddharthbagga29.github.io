@@ -2,6 +2,8 @@
 # Inactive until two repository secrets exist (Settings → Secrets and variables → Actions):
 #   CLOUDFLARE_API_TOKEN   — token with "Cloudflare Pages: Edit" permission
 #   CLOUDFLARE_ACCOUNT_ID  — from the Cloudflare dashboard sidebar
+# Without them every run is a visible skip (a notice in the run summary), never a silent "success".
+# The token is given only to the two steps that call Cloudflare, and wrangler is pinned to one version.
 name: Cloudflare Pages
 on:
   push:
@@ -15,29 +17,41 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       PROJECT: siddharthbagga
+      WRANGLER: wrangler@3.114.17
     steps:
       - name: Skip when Cloudflare isn't configured
         id: gate
+        env:
+          CONFIGURED: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
         run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "Cloudflare secrets not set; skipping."; echo "go=false" >> "$GITHUB_OUTPUT"
+          if [ "$CONFIGURED" != "true" ]; then
+            echo "::notice title=Cloudflare deploy skipped::CLOUDFLARE_API_TOKEN or CLOUDFLARE_ACCOUNT_ID is not set; nothing was deployed."
+            echo "go=false" >> "$GITHUB_OUTPUT"
           else echo "go=true" >> "$GITHUB_OUTPUT"; fi
-      - uses: actions/checkout@v4
-        if: steps.gate.outputs.go == 'true'
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         if: steps.gate.outputs.go == 'true'
         with:
-          node-version: 20
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        if: steps.gate.outputs.go == 'true'
+        with:
+          node-version: 22
+          package-manager-cache: false
       - name: Stage the static site
         if: steps.gate.outputs.go == 'true'
         run: rsync -a --exclude .git --exclude .github ./ _site/
       - name: Create the Pages project (first run only)
         if: steps.gate.outputs.go == 'true'
-        run: npx --yes wrangler@3 pages project create "$PROJECT" --production-branch=main || true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes "$WRANGLER" pages project create "$PROJECT" --production-branch=main || echo "::notice::Project create returned an error (normal if it already exists); the deploy step reports the outcome."
       - name: Deploy
         if: steps.gate.outputs.go == 'true'
-        run: npx --yes wrangler@3 pages deploy _site --project-name="$PROJECT" --branch=main --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes "$WRANGLER" pages deploy _site --project-name="$PROJECT" --branch=main --commit-dirty=true
